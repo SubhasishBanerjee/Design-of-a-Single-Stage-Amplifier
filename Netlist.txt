@@ -1,0 +1,57 @@
+*  Generated for: PrimeSim
+*  Design library name: sb_amp
+*  Design cell name: sb_amp3
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Sun Feb 27 13:56:12 2022
+
+.global gnd!
+********************************************************************************
+* Library          : sb_amp
+* Cell             : sb_amp3
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xm4 out net7 vdd vdd p105 w=1u l=.3u nf=1 m=1
+xm3 net7 net7 vdd vdd p105 w=1u l=.3u nf=1 m=1
+vin2 test out dc=0 ac=1
+vin1 in gnd! dc=0.45
+v5 vdd gnd! dc=1.8
+c1 out gnd! c=1p
+r1 vdd net8 r=30k
+xm6 net6 net8 gnd! gnd! n105 w=1u l=0.3u nf=1 m=1
+xm1 net7 in net6 gnd! n105 w=2u l=0.4u nf=1 m=1
+xm2 out test net6 gnd! n105 w=2u l=0.4u nf=1 m=1
+xm5 net8 net8 gnd! gnd! n105 w=1u l=0.3u nf=1 m=1
+
+
+
+
+
+
+
+
+.ac dec '100' '1' '100000000' name=ac
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe ac v(out) v(test)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
