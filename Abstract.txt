@@ -1,0 +1,3 @@
+The amplifiers are integral part of many analog and digital systems over the years. Amplifiers with different degrees of complexity are used in various circuits. 
+The design of such amplifiers is still a challenge as supply voltage and transistor dimensions are getting reduced because of scaling. 
+Here, a single stage amplifier with 1 MHz Bandwidth, 25dB Gain and 50 µA Quiescent Current has been implemented using Synopsys Custom Design Platform in 28nm CMOS Technology. 
